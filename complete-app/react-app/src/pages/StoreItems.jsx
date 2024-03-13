@@ -1,7 +1,18 @@
-export function StoreItems() {
+import { useState, useEffect } from "react";
+import "../styles/card.css";
+
+export function StoreItems({ menChecked, womenChecked }) {
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+		fetch("https://fakestoreapi.com/products")
+			.then((response) => response.json())
+			.then((data) => setItems(data));
+	}, [items]);
+
 	return (
-		<main class="store">
-			<div class="store__description">
+		<main className="store">
+			<div className="store__description">
 				<h2>Store Search</h2>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsam accusamus repellendus quas mollitia? Rem, quia, voluptate, nihil ipsum at eius veritatis necessitatibus eaque aliquam
@@ -9,49 +20,22 @@ export function StoreItems() {
 					quidem temporibus officiis earum soluta facilis, facere error voluptates! Fugit, optio quis.
 				</p>
 			</div>
-			<div class="store__items">
-				<div class="store__item-cell">
-					<div class="item">
-						<div class="item__image-container">
-							<img class="item__image" src="https://placehold.jp/150x150.png" alt=""></img>
+			<div className="store__items">
+				{items.map((item, i) => {
+					return (
+						<div className="store__item-cell" key={i}>
+							<div className="item">
+								<div className="item__image-container">
+									<img className="item__image" src={item.image} alt=""></img>
+								</div>
+								<div className="item__text">
+									<h3 className="item__name">{item.title}</h3>
+									<p className="item__description">{item.description}</p>
+								</div>
+							</div>
 						</div>
-						<div class="item__text">
-							<h3 class="item__name">Placeholder</h3>
-							<p class="item__description">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corporis ad cum adipisci eveniet, quod nesciunt error distinctio facere nobis libero placeat, accusamus maiores suscipit
-								repellendus voluptates obcaecati, laborum modi.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="store__item-cell">
-					<div class="item">
-						<div class="item__image-container">
-							<img class="item__image" src="https://placehold.jp/150x150.png" alt=""></img>
-						</div>
-						<div class="item__text">
-							<h3 class="item__name">Placeholder</h3>
-							<p class="item__description">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corporis ad cum adipisci eveniet, quod nesciunt error distinctio facere nobis libero placeat, accusamus maiores suscipit
-								repellendus voluptates obcaecati, laborum modi.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="store__item-cell">
-					<div class="item">
-						<div class="item__image-container">
-							<img class="item__image" src="https://placehold.jp/150x150.png" alt=""></img>
-						</div>
-						<div class="item__text">
-							<h3 class="item__name">Placeholder</h3>
-							<p class="item__description">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corporis ad cum adipisci eveniet, quod nesciunt error distinctio facere nobis libero placeat, accusamus maiores suscipit
-								repellendus voluptates obcaecati, laborum modi.
-							</p>
-						</div>
-					</div>
-				</div>
+					);
+				})}
 			</div>
 		</main>
 	);

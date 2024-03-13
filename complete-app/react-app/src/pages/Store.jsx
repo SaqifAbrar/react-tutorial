@@ -1,9 +1,10 @@
 import { Sidebar } from "../components/Sidebar";
 import { StoreItems } from "./StoreItems";
+import "../styles/store.css";
 
 export function Store() {
 	return (
-		<div className="navigation-layout">
+		<div className="side-layout">
 			<Sidebar />
 			<StoreItems />
 		</div>

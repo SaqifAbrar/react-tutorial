@@ -1,23 +1,25 @@
-export function Sidebar() {
+import "../styles/sidebar.css";
+
+export function Sidebar({ handleMenChecked, handleWomenChecked }) {
 	return (
-		<div class="sidebar">
-			<div class="sidebar_content">
+		<div className="sidebar">
+			<div className="sidebar_content">
 				<h3>Filters</h3>
 			</div>
-			<form class="sidebar__filter" action="">
-				<input type="checkbox" class="filter__option" id="men-clothing" name="men-clothing" value="men" />
-				<label for="men-clothing">Men's Clothing</label>
+			<form className="sidebar__filter" action="">
+				<input type="checkbox" className="filter__option" id="men-clothing" onClick={() => handleMenChecked()} />
+				<label htmlFor="men-clothing">Men's Clothing</label>
 				<br />
-				<input type="checkbox" class="filter__option" id="men-clothing" name="women-clothing" value="men" />
-				<label for="men-clothing">Women's Clothing</label>
+				<input type="checkbox" className="filter__option" id="men-clothing" onClick={() => handleWomenChecked()} />
+				<label htmlFor="men-clothing">Women's Clothing</label>
 				<br />
-				<input type="checkbox" class="filter__option" id="jewlery" name="jewlery" value="jewlery" />
-				<label for="men-clothing">Jewlery</label>
+				<input type="checkbox" className="filter__option" id="jewlery" name="jewlery" value="jewlery" />
+				<label htmlFor="men-clothing">Jewlery</label>
 				<br />
-				<input type="checkbox" class="filter__option" id="electronics" name="electronics" value="electronics" />
-				<label for="men-clothing">Electronics</label>
+				<input type="checkbox" className="filter__option" id="electronics" name="electronics" value="electronics" />
+				<label htmlFor="men-clothing">Electronics</label>
 				<br />
-				<input class="filter__button" type="submit" value="Submit" />
+				<input className="filter__button" type="submit" value="Submit" />
 			</form>
 		</div>
 	);

@@ -1,0 +1,18 @@
+.side-layout {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.store {
+	padding: 2.5rem 5rem;
+}
+
+.store__items {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	/*grid-template-rows: repeat(5, 1fr);*/
+}
+
+.store__item-cell {
+	padding: 0.5rem;
+}

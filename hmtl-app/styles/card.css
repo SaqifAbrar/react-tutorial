@@ -1,0 +1,19 @@
+.item {
+	padding: 1rem;
+	border: 1px solid #000000;
+	border-radius: 10px;
+}
+
+/*** Controls image sizing for small images
+.item__image-container {
+	padding: 0.5rem 0rem;
+	display: flex;
+	justify-content: center;
+}
+***/
+
+.item__image {
+	/* width: 10rem; */
+	width: 100%;
+	height: auto;
+}

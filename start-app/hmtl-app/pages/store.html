@@ -3,15 +3,20 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>React Tutorial HTML Example</title>
-		<link href="/hmtl-app/styles/globals.css" rel="stylesheet" />
-		<link href="/hmtl-app/styles/navigation.css" rel="stylesheet" />
-		<link href="/hmtl-app/styles/store.css" rel="stylesheet" />
-		<link href="/hmtl-app/styles/card.css" rel="stylesheet" />
+		<link href="../styles/globals.css" rel="stylesheet" />
+		<link href="../styles/navigation.css" rel="stylesheet" />
+		<link href="../styles/sidebar.css" rel="stylesheet" />
+		<link href="../styles/store.css" rel="stylesheet" />
+		<link href="../styles/card.css" rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="app">
-			<!-- Navbar Component	--->
 			<div class="navigation-layout">
+				<!-- Navbar Component	--->
 				<nav class="nav">
 					<img class="nav__logo" src="../static/logo-ipsum.svg" alt="" />
 					<ul class="nav__options">
@@ -23,6 +28,7 @@
 			</div>
 
 			<div class="side-layout">
+
 				<!-- Side Bar Component -->
 				<div class="sidebar">
 					<div class="sidebar_content">
@@ -37,6 +43,7 @@
 						<label for="men-clothing">Jewlery</label><br />
 						<input type="checkbox" class="filter__option" id="electronics" name="electronics" value="electronics" />
 						<label for="men-clothing">Electronics</label><br />
+						<input class="filter__button" type="submit" value="Submit">
 					</form>
 				</div>
 
